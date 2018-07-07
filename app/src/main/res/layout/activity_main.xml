@@ -35,6 +35,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onCLick"
+        android:text="UNBound SERVICE"
+        android:id="@+id/unbound"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onCLick"
         android:text="Intent SERVICE"
         android:id="@+id/intent"
         />

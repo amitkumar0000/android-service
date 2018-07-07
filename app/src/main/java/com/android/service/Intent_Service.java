@@ -26,6 +26,9 @@ public class Intent_Service extends IntentService {
     @Override
     protected void onHandleIntent(@Nullable Intent intent) {
         Log.d(TAG,"onHandleIntent");
+        for(int i=0; i < 100;i++){
+            Log.d(TAG,"i:: "+i);
+        }
     }
 
     @Override
