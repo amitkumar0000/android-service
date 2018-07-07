@@ -1,6 +1,7 @@
 package com.android.service;
 
 import android.content.Intent;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,7 +22,12 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()){
             case R.id.normal:{
                 Log.d(TAG,"Start the normal service");
-                startService(new Intent(this, NormalService.class));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    startForegroundService(new Intent(this, NormalService.class));
+                }else{
+                    startService(new Intent(this, NormalService.class));
+                }
+
                 break;
             }
             case R.id.stopnormal:{
