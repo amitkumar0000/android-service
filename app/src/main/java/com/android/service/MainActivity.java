@@ -75,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
             }
             case R.id.jobintent:{
                 Log.d(TAG,"Start the jobintent service");
+                Intent intent = new Intent();
+                intent.setAction("START_JOB_INTENT_SERVICE");
+                JobIntent_Service.enqueueWork(this,1,intent);
                 break;
             }
         }

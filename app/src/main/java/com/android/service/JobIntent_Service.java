@@ -13,6 +13,7 @@ public class JobIntent_Service extends JobIntentService{
         Log.d(TAG,"onCreate");
     }
 
+
     @Override
     protected void onHandleWork(@NonNull Intent intent) {
         Log.d(TAG,"onHandleWork");
@@ -24,5 +25,10 @@ public class JobIntent_Service extends JobIntentService{
         super.onDestroy();
         Log.d(TAG,"onDestroy");
 
+    }
+
+    public static void enqueueWork(MainActivity mainActivity, int jobId, Intent intent) {
+        Log.d("JobIntentService","enqueueWork");
+        enqueueWork(mainActivity,JobIntent_Service.class,jobId,intent);
     }
 }
