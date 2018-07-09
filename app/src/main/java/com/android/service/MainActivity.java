@@ -11,6 +11,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.android.utils.ResultReceiver;
+
+import static com.android.utils.Constants.BUNDLE;
+import static com.android.utils.Constants.REQUEST_INTENT_RESULT;
+
 public class MainActivity extends AppCompatActivity {
     final String TAG = "Service";
     ServiceConnection serviceConnection;
@@ -70,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             }
             case R.id.intent:{
                 Log.d(TAG,"Start the intent service");
-                startService(new Intent(this,Intent_Service.class));
+                startIntentService();
                 break;
             }
             case R.id.jobintent:{
@@ -81,6 +86,14 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }
         }
+    }
+
+    private void startIntentService() {
+        Intent intent = new Intent(this,Intent_Service.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(REQUEST_INTENT_RESULT,new ResultReceiver());
+        intent.putExtra(BUNDLE,bundle);
+        startService(intent);
     }
 
 }

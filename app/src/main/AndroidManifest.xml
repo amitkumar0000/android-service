@@ -19,8 +19,8 @@
         <service android:name=".BoundService"/>
         <service android:name=".Intent_Service"/>
         <service android:name=".JobIntent_Service"
-                 android:permission="android.permission.BIND_JOB_SERVICE"
-            />
+                       android:permission="android.permission.BIND_JOB_SERVICE"
+        />
     </application>
 
 </manifest>
