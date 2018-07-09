@@ -16,4 +16,16 @@ service need to publish notification using startforground
 within 5 sec of creation.
 
 Intent Service is also replaced by JobIntentService 
+
+jobIntentService works on workerQueue model. Internally jobIntentService uses JobService to dequeue work.
+so it happen sequentially
+
+
+Communication b/w activity and service
+1. Via Interface
+  passing object in intent bundle while starting service. Service reponse back on object callback.
+2. Bound Seevice
+  it establish client and server and can communicate.
+3. BroadcastReceiver
+   LocalBroadCast can be use for communication
   
