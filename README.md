@@ -6,7 +6,9 @@ Service
   normal Service  : will stop when stopself or stopservice is called
   
   Intent Service  : work on workerqueue model. Create a thread that read job from queue and execute sequentially.
-                  once done. stop itself as stopself is called
+                  once done. stop itself as stopself is called. 
+                  Intent Service will not handle any asynchrous task result. It not designed to wait for any asynchrous task
+                  completion and return immediately after starting it
                   
   sticky service : stick to system. restart itself if killed                 
   
